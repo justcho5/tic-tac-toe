@@ -45,7 +45,7 @@ const gameController = (() => {
     return round % 2 === 1 ? p1 : p2;
   };
 
-  const checkWinner = (index) => {
+  const winnerExists = (index) => {
     winningCombos = [
       [0, 1, 2],
       [3, 4, 5],
@@ -70,7 +70,7 @@ const gameController = (() => {
   const playRound = (index) => {
     gameBoard.setValue(index, getCurrentPlayer().getSign());
     gameBoard.printBoard();
-    result = checkWinner(index);
+    result = winnerExists(index);
 
     // check if game over
     if (result) {
@@ -131,7 +131,7 @@ const screenController = (() => {
     setalertElement(`${gameController.getCurrentPlayer().name}'s turn`);
   });
 
-  // restart
+  // restart ui
   const resetgameBoard = () => {
     for (let i = 0; i < boxElements.length; i++) {
       boxElements[i].textContent = gameBoard.getValue(i);
