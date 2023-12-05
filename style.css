@@ -1,0 +1,33 @@
+:root {
+  --border-color: #555;
+}
+header,
+main,
+footer,
+form {
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+}
+main {
+  flex-direction: column;
+  text-align: center;
+}
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 454px;
+  height: 454px;
+  border: 2px solid var(--border-color);
+  margin: 0px auto;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--border-color);
+  font-size: 100px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
